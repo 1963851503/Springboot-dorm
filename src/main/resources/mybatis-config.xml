@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 全局映射器启用缓存，mybatis二级缓存 -->
+        <setting name="cacheEnabled" value="true"/>
+        <!-- 数据库列名转换成java驼峰属性名 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 当没有指定参数的jdbc类型是，设置默认的jdbc类型. -->
+        <setting name="jdbcTypeForNull" value="VARCHAR"/>
+        <!-- if setters or map's put method will be called when a retrieved value is null. -->
+        <setting name="callSettersOnNulls" value="true"/>
+        <!-- if and how MyBatis should automatically map columns to fields/properties. -->
+        <setting name="autoMappingBehavior" value="FULL" />
+    </settings>
+
+    <!--  -->
+    <typeAliases>
+        <package name="com.jsjx.dorm.app.vo" />
+        <package name="com.jsjx.dorm.app.domain" />
+        <package name="com.jsjx.dorm.web.vo" />
+        <package name="com.jsjx.dorm.web.domain" />
+    </typeAliases>
+
+    <plugins>
+        <!--数据日志
+        <plugin interceptor="com.neusofthuiju.platform.log.helper.DataLogHelper">
+        </plugin>-->
+        <!-- 分页插件 -->
+        <!-- com.github.pagehelper为PageHelper类所在包名 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!-- 设置数据库方言 -->
+            <property name="helperDialect" value="mysql"/>
+            <!-- 设置为true时，使用RowBounds作为分页参数时有效：为true时，将RowBounds第一个参数offset当成pageNum页码使用 -->
+            <property name="offsetAsPageNum" value="false"/>
+            <!-- 使用 RowBounds 分页时，是否进行 count 查询 -->
+            <property name="rowBoundsWithCount" value="true"/>
+            <!-- 默认值为 false，当该参数设置为 true 时，如果 pageSize=0 或者 RowBounds.limit = 0
+                 就会查询出全部的结果（相当于没有执行分页查询，但是返回结果仍然是 Page 类型） -->
+            <property name="pageSizeZero" value="false"/>
+            <property name="reasonable" value="true"/>
+        </plugin>
+        <!--公共字段赋值-->
+        <plugin interceptor="com.jsjx.dorm.baseutils.OpeInfoInterceptor"/>
+        <!-- 查询自动分页 -->
+        <!--<plugin interceptor="com.huiju.cms.extend.QueryInterceptor"/>-->
+        <!--<plugin interceptor="com.huiju.cms.extend.ParamInterceptor"/>-->
+        <!--处理查询%转义
+        <plugin interceptor="com.neusofthuiju.platform.common.mybatis.interceptor.MyBatisSQLInterceptor"/>-->
+
+    </plugins>
+
+</configuration>

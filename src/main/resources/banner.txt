@@ -1,0 +1,11 @@
+  ${AnsiColor.GREEN}  ______  _____  ____    ________     ${AnsiColor.RED}
+  ${AnsiColor.GREEN} /\__  _\/\___ \/\  _`\ /\_____  \    ${AnsiColor.RED}
+  ${AnsiColor.GREEN} \/_/\ \/\/__/\ \ \ \/\ \/____//'/'   ${AnsiColor.RED}
+  ${AnsiColor.GREEN}    \ \ \   _\ \ \ \ \ \ \   //'/'    ${AnsiColor.RED}
+  ${AnsiColor.GREEN}     \ \ \ /\ \_\ \ \ \_\ \ //'/'___  ${AnsiColor.RED}
+  ${AnsiColor.GREEN}      \ \_\\ \____/\ \____/ /\_______\${AnsiColor.RED}
+  ${AnsiColor.GREEN}       \/_/ \/___/  \/___/  \/_______/${AnsiColor.RED}
+
+${AnsiColor.BRIGHT_BLUE}:: 天津电子信息职业技术学院 计算机与软件技术系 宿舍管理系统项目 ::
+${AnsiColor.BRIGHT_BLUE}:: ---- Running Spring Boot  ${spring-boot.version} ---- ::
+:: http://www.tjdz.edu.cn/a/departmentsite/yingyongxi ::${AnsiColor.DEFAULT}
